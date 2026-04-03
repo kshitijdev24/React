@@ -3,26 +3,23 @@ import { useState } from "react";
 
 const App = () => {
   const [a, setA] = useState(0);
-
   const [name, setname] = useState("Anshu");
-
-  const [counter, setCounter] = useState(0);
-
   function changeStates() {
     setA(a + 1);
     setname("Kshitij");
   }
 
+
+ const [counter, setCounter] = useState(0);
   function increment() {
     setCounter(counter + 1);
   }
-
   function decrement() {
     setCounter(counter - 1);
   }
 
-  const [user, setUser] = useState({ name: "Anshu", age: 21, city: "Delhi" });
 
+  const [user, setUser] = useState({ name: "Anshu", age: 21, city: "Delhi" });
   const changeUser = () => {
     const newUse = { ...user };// spread operator is used to create a new object with the same properties as the original user object. This is important because we want to avoid mutating the original user object directly, which can lead to unexpected behavior in React. By creating a new object, we ensure that we are following React's principle of immutability, allowing React to properly detect changes and update the UI accordingly.
     newUse.name = "Kshitij";
@@ -30,6 +27,15 @@ const App = () => {
     newUse.city = "Mumbai";
     setUser(newUse);
   };
+
+  const [arr, setArr] = useState([1, 2, 3, 4, 5]);
+  
+  const addElement = () => {
+    let newArr = [...arr];
+    let  length = newArr.length;
+    newArr.push(length + 1);
+    setArr(newArr);
+  }
 
   return (
     <div>
@@ -49,6 +55,14 @@ const App = () => {
       <h3>user age:{ user.age}</h3>
       <h3>user city:{user.city}</h3>
       <button onClick={changeUser}>Change User</button>
+      <hr />
+      <h1>Array App</h1>
+      <ul>
+        {arr.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      <button onClick={addElement}>Add Element</button>
     </div>
   );
 };
