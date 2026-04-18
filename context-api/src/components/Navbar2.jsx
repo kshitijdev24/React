@@ -1,18 +1,18 @@
 import React from "react";
+import {useContext} from 'react'
+import {ThemeDataContext} from '../context/ThemeContext'
 
-const Navbar2 = (props) => {
-  const toggleTheme = () => {
-    props.theme=='light'? props.setTheme('dark'):props.setTheme('light')
-    
-  }
+const Navbar2 = () => {
+  const [theme]=useContext(ThemeDataContext)
   return (
     <div className='nav2'>
       <h4>Home</h4>
       <h4>About</h4>
       <h4>Services</h4>
       <h4>Contact</h4>
-      <button onClick={toggleTheme}>toggle theme</button>
-      <h3>{props.theme}</h3>
+      <h4>{theme}</h4>
+      
+      
     </div>
   );
 };

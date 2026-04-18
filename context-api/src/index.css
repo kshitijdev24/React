@@ -10,16 +10,29 @@ html,body{
   width:100%;
 }
 
-.nav{
-  display: flex;
-  justify-content: space-between;
-  background-color: aqua;
-  align-items: center;
-  padding: 10px 20px;
-}
 
 .nav2{
   display:flex;
   justify-content: space-evenly;
   gap: 30px;
+}
+
+.light{
+  display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: aquamarine;
+
+}
+
+.dark{
+  display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: seagreen;
+  
 }
